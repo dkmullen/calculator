@@ -14,16 +14,18 @@
 			<h1>Calculator</h1>
 			<p id="home" class="small-text"><a href="http://dkmullen.com/">dkmullen.com</a></p>
 		</div>
-		<table id="number-pad">
+		<table id="display">
+			<tr><td><div id="top-window"></div></td></tr>
 			<tr><td><div id="main-window" data-bind="text: activeDisplay"></div></td></tr>
+		</table>
+		<table id="number-pad">
 			<tr><td class="half"><button id="MC">MC</button><button id="MR">MR</button><button id="M-plus">M+</button><button id="M-minus">M-</button></td></tr>
 			<tr><td class="half"><button id="CE">CE</button><button id="C">C</button><button id="backspace"><</button><button>H</button></td></tr>
-			<tr><td><button id="seven">7</button><button id="eight">8</button><button id="nine">9</button><button id="divided-by">/</button></td></tr>
-			<tr><td><button id="four">4</button><button id="five">5</button><button id="six">6</button><button id="times">X</button></td></tr>
-			<tr><td><button id="one" data-bind="click: keyListener(1)">1</button><button id="two">2</button><button id="three">3</button><button id="minus">-</button></td></tr>
-			<tr><td><button id="zero">0</button><button id="decimal">.</button><button id="red">=</button><button id="plus">+</button></td></tr>
+			<tr><td><button id="seven" data-bind="click: seven">7</button><button id="eight" data-bind="click: eight">8</button><button id="nine" data-bind="click: nine">9</button><button id="divided-by">/</button></td></tr>
+			<tr><td><button id="four" data-bind="click: four">4</button><button id="five" data-bind="click: five">5</button><button id="six" data-bind="click: six">6</button><button id="times">X</button></td></tr>
+			<tr><td><button id="one" data-bind="click: one">1</button><button id="two" data-bind="click: two">2</button><button id="three" data-bind="click: three">3</button><button id="minus">-</button></td></tr>
+			<tr><td><button id="zero" data-bind="click: zero">0</button><button id="point" data-bind="click: point">.</button><button id="red">=</button><button id="plus">+</button></td></tr>
 		</table>
-		
 	</div>
 
 <script src="knockoutjs_3-4-0.js"></script>
