@@ -109,10 +109,10 @@ button {
 	width: 60px;
 	padding: 0;
 }
-#half button {
+.half button {
 	height: 30px;
 }
-#blue {
+#zero, #one,#two,#three,#four,#five,#six,#seven,#eight, #nine, #decimal {
 	background-color: rgb(13, 63, 104);
 }
 #red {

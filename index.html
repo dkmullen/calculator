@@ -15,13 +15,13 @@
 			<p id="home" class="small-text"><a href="http://dkmullen.com/">dkmullen.com</a></p>
 		</div>
 		<table id="number-pad">
-			<tr><td><div id="main-window"></div></td></tr>
-			<tr><td id="half"><button>MC</button><button>MR</button><button>M+</button><button>M-</button></td></tr>
-			<tr><td id="half"><button>CE</button><button>C</button><button><</button><button>H</button></td></tr>
-			<tr><td><button id="blue">7</button><button id="blue">8</button><button id="blue">9</button><button id="lt-blue">/</button></td></tr>
-			<tr><td><button id="blue">4</button><button id="blue">5</button><button id="blue">6</button><button id="lt-blue">X</button></td></tr>
-			<tr><td><button id="blue">1</button><button id="blue">2</button><button id="blue">3</button><button id="lt-blue">-</button></td></tr>
-			<tr><td><button id="blue">0</button><button id="blue">.</button><button id="red">=</button><button id="lt-blue">+</button></td></tr>
+			<tr><td><div id="main-window" data-bind="text: activeDisplay"></div></td></tr>
+			<tr><td class="half"><button id="MC">MC</button><button id="MR">MR</button><button id="M-plus">M+</button><button id="M-minus">M-</button></td></tr>
+			<tr><td class="half"><button id="CE">CE</button><button id="C">C</button><button id="backspace"><</button><button>H</button></td></tr>
+			<tr><td><button id="seven">7</button><button id="eight">8</button><button id="nine">9</button><button id="divided-by">/</button></td></tr>
+			<tr><td><button id="four">4</button><button id="five">5</button><button id="six">6</button><button id="times">X</button></td></tr>
+			<tr><td><button id="one" data-bind="click: keyListener(1)">1</button><button id="two">2</button><button id="three">3</button><button id="minus">-</button></td></tr>
+			<tr><td><button id="zero">0</button><button id="decimal">.</button><button id="red">=</button><button id="plus">+</button></td></tr>
 		</table>
 		
 	</div>
