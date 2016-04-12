@@ -7,6 +7,7 @@ var activeDisplay = ko.observable(activeInput);
 function ViewModel() {
 	
 	var a, b;
+	var holdingPen = [];
 	
 	self.enterDigit = function(numStr) {
 		if (activeInput === '0' && numStr !== '.') {
@@ -18,9 +19,12 @@ function ViewModel() {
 	
 	self.storeOperation = function(numStr, operandStr) {
 		if (numStr === ''){
-				topStr = topStr.slice(0, -3);
-			}
-		
+			topStr = topStr.slice(0, -3);
+		} 
+		else {
+			holdingPen.push(parseFloat(numStr));
+			console.log(holdingPen.length);
+		}	
 		topStr += (numStr + operandStr);
 		topDisplay(topStr);
 		activeInput = '';
@@ -57,6 +61,7 @@ function ViewModel() {
 	self.seven = function() {
 		self.enterDigit('7');
 	};
+	
 	
 	self.eight = function() {
 		self.enterDigit('8');
