@@ -6,7 +6,7 @@ var activeDisplay = ko.observable(activeInput);
 
 function ViewModel() {
 	
-	var a, b;
+	var tempOperand = [];
 	var holdingPen = [];
 	
 	self.enterDigit = function(numStr) {
@@ -23,11 +23,47 @@ function ViewModel() {
 		} 
 		else {
 			holdingPen.push(parseFloat(numStr));
-			console.log(holdingPen.length);
-		}	
+			tempOperand.push(operandStr);
+		}
 		topStr += (numStr + operandStr);
-		topDisplay(topStr);
-		activeInput = '';
+			topDisplay(topStr);
+			activeInput = '';
+		if (holdingPen.length === 2) {
+			self.performCalc();
+		}
+	};
+	
+	self.performCalc = function() {
+		switch (tempOperand[0]) {
+        case ' + ':
+            activeInput = holdingPen[0] + holdingPen[1];
+			activeDisplay(activeInput);
+			holdingPen = [activeInput];
+			tempOperand.shift();
+			activeInput = '';
+            break;
+		case ' - ':
+            activeInput = holdingPen[0] - holdingPen[1];
+			activeDisplay(activeInput);
+			holdingPen = [activeInput];
+			tempOperand.shift();
+			activeInput = '';
+            break;
+		case ' * ':
+            activeInput = holdingPen[0] * holdingPen[1];
+			activeDisplay(activeInput);
+			holdingPen = [activeInput];
+			tempOperand.shift();
+			activeInput = '';
+            break;
+		case ' / ':
+            activeInput = holdingPen[0] / holdingPen[1];
+			activeDisplay(activeInput);
+			holdingPen = [activeInput];
+			tempOperand.shift();
+			activeInput = '';
+            break;
+		}
 	};
 	
 	self.zero = function() {
@@ -81,6 +117,8 @@ function ViewModel() {
 		topDisplay('');
 		activeDisplay(activeInput = '0');
 		topStr = '';
+		tempOperand = [];
+		holdingPen = [];
 	};
 	
 	self.plus = function() {
