@@ -8,6 +8,7 @@ function ViewModel() {
 	
 	var tempOperand = [];
 	var holdingPen = [];
+	var operandStr;
 	
 	self.enterDigit = function(numStr) {
 		if (activeInput === '0' && numStr !== '.') {
@@ -38,9 +39,6 @@ function ViewModel() {
         case ' + ':
             activeInput = holdingPen[0] + holdingPen[1];
 			activeDisplay(activeInput);
-			holdingPen = [activeInput];
-			tempOperand.shift();
-			activeInput = '';
             break;
 		case ' - ':
             activeInput = holdingPen[0] - holdingPen[1];
@@ -63,6 +61,18 @@ function ViewModel() {
 			tempOperand.shift();
 			activeInput = '';
             break;
+		}
+		if (tempOperand[1] === ' = ') {
+			topDisplay('');
+			topStr = '';
+			tempOperand = [];
+			holdingPen = [activeInput];
+			activeInput = '';
+		}	
+		else {
+			holdingPen = [activeInput];
+			tempOperand.shift();
+			activeInput = '';
 		}
 	};
 	
@@ -135,6 +145,10 @@ function ViewModel() {
 	
 	self.divide = function() {
 		self.storeOperation(activeInput, ' / ');
+	};
+	
+	self.equals = function() {
+		self.storeOperation(activeInput, ' = ');
 	};
 }
 ko.applyBindings(new ViewModel());
