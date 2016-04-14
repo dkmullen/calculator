@@ -43,31 +43,21 @@ function ViewModel() {
 		case ' - ':
             activeInput = holdingPen[0] - holdingPen[1];
 			activeDisplay(activeInput);
-			holdingPen = [activeInput];
-			tempOperand.shift();
-			activeInput = '';
             break;
 		case ' * ':
             activeInput = holdingPen[0] * holdingPen[1];
 			activeDisplay(activeInput);
-			holdingPen = [activeInput];
-			tempOperand.shift();
-			activeInput = '';
             break;
 		case ' / ':
             activeInput = holdingPen[0] / holdingPen[1];
 			activeDisplay(activeInput);
-			holdingPen = [activeInput];
-			tempOperand.shift();
-			activeInput = '';
             break;
 		}
 		if (tempOperand[1] === ' = ') {
-			topDisplay('');
 			topStr = '';
+			topDisplay(topStr);
 			tempOperand = [];
-			holdingPen = [activeInput];
-			activeInput = '';
+			holdingPen = [];
 		}	
 		else {
 			holdingPen = [activeInput];
