@@ -19,8 +19,10 @@ function ViewModel() {
 	};
 	
 	self.storeOperation = function(numStr, operandStr) {
-		if (numStr === ''){
+		if (numStr === '' && operandStr !== ' = '){
 			topStr = topStr.slice(0, -3);
+			tempOperand.pop();
+			tempOperand.push(operandStr);
 		} 
 		else {
 			holdingPen.push(parseFloat(numStr));
@@ -56,8 +58,10 @@ function ViewModel() {
 		if (tempOperand[1] === ' = ') {
 			topStr = '';
 			topDisplay(topStr);
-			tempOperand = [];
 			holdingPen = [];
+			tempOperand = [];
+			//activeInput = '';
+			
 		}	
 		else {
 			holdingPen = [activeInput];
@@ -138,7 +142,9 @@ function ViewModel() {
 	};
 	
 	self.equals = function() {
-		self.storeOperation(activeInput, ' = ');
+		if (tempOperand.length === 1 && activeInput !== '') {
+			self.storeOperation(activeInput, ' = ');
+		}
 	};
 }
 ko.applyBindings(new ViewModel());
