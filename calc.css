@@ -98,6 +98,7 @@ table {
 	margin: 0 2px 0 2px;
 	text-align: right;
 	font-size: 15px;
+	color: rgb(100, 100, 100)
 }
 #main-window {
 	background-color: rgb(255, 255, 255);
@@ -128,72 +129,94 @@ button {
 #equals {
 	background-color: rgb(182, 27, 56);
 }
-#lt-blue {
-	background-color: rgb(21, 112, 181);
-}
-
 @media only screen and (min-height: 500px) {
-	#title-area, input {
-		margin-bottom: 30px;
-	}
-	#directions {
-		margin-bottom: 25px;
+	#title-area {
+		margin-bottom: 40px;
 	}
 }
 @media only screen and (min-height: 600px) {
-	#title-area, input {
+	#title-area {
 		margin-bottom: 40px;
-	}
-	#directions {
-		margin-bottom: 60px;
-	}
-	#button-wrapper {
-		margin-top: 50px;
 	}
 	.small-text {
 		font-size: 100%;
+	}
+	button {
+		height: 70px;
+		width: 70px;
+	}
+	.half button{
+		height: 35px;
+	}
+	table {
+		width: 290px;
+	}
+	#top-window {
+		height: 30px;
+		font-size: 20px;
+	}
+	#main-window {
+		height: 40px;
+		font-size: 35px;
 	}
 }
 @media only screen and (min-height: 700px) {
 	body {
 		font-size: 110%;
 	}
-	#title-area, input {
+	#title-area {
 		margin-bottom: 50px;
-	}
-	#directions {
-		margin-bottom: 60px;
-	}
-	#button-wrapper {
-		margin-top: 50px;
 	}
 	.small-text {
 		font-size: 100%;
+	}
+	button {
+		height: 80px;
+		width: 80px;
+		font-size: 25px;
+	}
+	.half button{
+		height: 40px;
+	}
+	table {
+		width: 330px;
+	}
+	#top-window {
+		height: 35px;
+		font-size: 20px;
+	}
+	#main-window {
+		height: 45px;
+		font-size: 40px;
 	}
 }
 @media only screen and (min-height: 850px) {
 	body {
 		font-size: 130%;
 	}
-	#title-area, input {
+	#title-area {
 		margin-bottom: 80px;
-	}
-	#directions {
-		margin-bottom: 70px;
-	}
-	#button-wrapper {
-		margin-top: 80px;
 	}
 	.small-text {
 		font-size: 100%;
 	}
-	input[type="number"] {
-		margin: 10px 0 25px 0;
+	button {
+		height: 90px;
+		width: 90px;
+		font-size: 30px;
 	}
-	button, #submit {
-		font-size: 20px;
+	.half button {
+		height: 45px;
 	}
-	#miles {
-		width: 80px;
+	table {
+		width: 370px;
+	}
+	#top-window {
+		height: 35px;
+		font-size: 25px;
+	}
+	#main-window {
+		height: 55px;
+		font-size: 50px;
 	}
 }
