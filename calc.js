@@ -9,6 +9,25 @@ function ViewModel() {
 	var tempOperand = [];
 	var holdingPen = [];
 	var operandStr;
+	var memory = null;
+	
+	self.memoryPlus = function() {
+		memory += parseFloat(activeInput);
+	};
+	
+	self.memoryMinus = function() {
+		memory -= parseFloat(activeInput);
+	};
+	
+	self.memoryRecall = function() {
+		if (memory !== null) {
+			activeInput = memory.toString();
+			activeDisplay(activeInput);
+		}
+	};
+	self.memoryClear = function() {
+		memory = null;
+	};
 	
 	self.enterDigit = function(numStr) {
 		if (activeInput === '0' && numStr !== '.') {

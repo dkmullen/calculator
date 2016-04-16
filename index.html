@@ -19,7 +19,7 @@
 			<tr><td><div id="main-window" data-bind="text: activeDisplay"></div></td></tr>
 		</table>
 		<table id="number-pad">
-			<tr><td class="half"><button id="MC">MC</button><button id="MR">MR</button><button id="M-plus">M+</button><button id="M-minus">M-</button></td></tr>
+			<tr><td class="half"><button id="MC" data-bind="click: memoryClear">MC</button><button id="MR" data-bind="click: memoryRecall">MR</button><button id="M-plus" data-bind="click: memoryPlus">M+</button><button id="M-minus" data-bind="click: memoryMinus">M-</button></td></tr>
 			<tr><td class="half"><button id="CE">CE</button><button id="C" data-bind="click: C">C</button><button id="backspace"><</button><button>H</button></td></tr>
 			<tr><td><button id="seven" data-bind="click: seven">7</button><button id="eight" data-bind="click: eight">8</button><button id="nine" data-bind="click: nine">9</button><button id="divided-by" data-bind="click: divide">/</button></td></tr>
 			<tr><td><button id="four" data-bind="click: four">4</button><button id="five" data-bind="click: five">5</button><button id="six" data-bind="click: six">6</button><button id="times" data-bind="click: times">X</button></td></tr>
