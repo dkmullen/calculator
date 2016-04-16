@@ -179,6 +179,16 @@ function ViewModel() {
 		}
 	};
 	
+	self.percent = function() {
+		var n = self.roundToTwo((parseFloat(activeInput)/100) * holdingPen[0]);
+		activeInput = n.toString();
+		activeDisplay(activeInput);
+	};
+	
+	self.roundToTwo = function(num) {
+		return +(Math.round(num + 'e+2')  + 'e-2');
+	};
+	
 	self.handleInput = function(input, allowedKeys) {
 		switch (input) {
 			case 'backspace':
