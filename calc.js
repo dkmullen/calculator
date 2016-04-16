@@ -29,6 +29,19 @@ function ViewModel() {
 		memory = null;
 	};
 	
+	self.backSpace = function() {
+		activeInput = activeInput.slice(0, -1);
+		if (activeInput === '') {
+			activeInput = '0';
+		}
+		activeDisplay(activeInput);
+	};
+	
+	self.clearEntry = function() {
+		activeInput = '0';
+		activeDisplay(activeInput);
+	};
+	
 	self.enterDigit = function(numStr) {
 		if (activeInput === '0' && numStr !== '.') {
 			activeDisplay(activeInput = numStr);
@@ -165,5 +178,85 @@ function ViewModel() {
 			self.storeOperation(activeInput, ' = ');
 		}
 	};
+	
+	self.handleInput = function(input, allowedKeys) {
+		switch (input) {
+			case 'backspace':
+				self.backSpace();
+				break;
+			case 'ENTER':
+				self.equals();
+				break;
+			case '0':
+				self.zero();
+				break;
+			case '1':
+				self.one();
+				break;
+			case '2':
+				self.two();
+				break;
+			case '3':
+				self.three();
+				break;
+			case '4':
+				self.four();
+				break;
+			case '5':
+				self.five();
+				break;
+			case '6':
+				self.six();
+				break;
+			case '7':
+				self.seven();
+				break;
+			case '8':
+				self.eight();
+				break;
+			case '9':
+				self.nine();
+				break;
+			case '*':
+				self.times();
+				break;
+			case '+':
+				self.plus();
+				break;
+			case '-':
+				self.minus();
+				break;
+			case '.':
+				self.point();
+				break;
+			case '/':
+				self.divide();
+				break;
+		}
+	};
+	
+	document.addEventListener('keypress', function(e) {
+		var allowedKeys = {
+			08: 'backspace',
+			13: 'ENTER',
+			48: '0',
+			49: '1',
+			50: '2',
+			51: '3',
+			52: '4',
+			53: '5',
+			54: '6',
+			55: '7',
+			56: '8',
+			57: '9',
+			42: '*',
+			43: '+',
+			45: '-',
+			46: '.',
+			61: '=',
+			47: '/'
+		};
+		self.handleInput(allowedKeys[e.keyCode]);
+	});
 }
 ko.applyBindings(new ViewModel());
