@@ -180,9 +180,11 @@ function ViewModel() {
 	};
 	
 	self.percent = function() {
-		var n = self.roundToTwo((parseFloat(activeInput)/100) * holdingPen[0]);
-		activeInput = n.toString();
-		activeDisplay(activeInput);
+		if (holdingPen.length > 0 && activeInput !== '') {
+			var n = self.roundToTwo((parseFloat(activeInput)/100) * holdingPen[0]);
+			activeInput = n.toString();
+			activeDisplay(activeInput);
+		}
 	};
 	
 	self.roundToTwo = function(num) {
