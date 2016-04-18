@@ -59,7 +59,7 @@ html {
 body {
 	font-family: 'Lato', sans-serif;
 	line-height: 1.15;
-	max-width: 800px;
+	max-width: 1024px;
 	min-width: 320px;
 	margin: 0 auto;
 	text-align: center;
@@ -74,7 +74,6 @@ body {
 	background-color: rgb(13, 63, 104);
 	color: rgb(255, 255, 255);
 	padding: 10px;
-	margin-bottom: 20px;
 }
 .small-text {
 	font-size: 85%;
@@ -90,7 +89,7 @@ table {
     text-align: center; 
     margin-left: auto; 
     margin-right: auto; 
-    width: 250px;
+    width: 270px;
 }
 #display {
 	max-width: 100%;
@@ -120,12 +119,12 @@ button {
     font-size: 20px;
     margin: 1px;
 	cursor: pointer;
-	height: 60px;
-	width: 60px;
+	height: 65px;
+	width: 65px;
 	padding: 0;
 }
 .half button {
-	height: 30px;
+	height: 32px;
 }
 #zero, #one,#two,#three,#four,#five,#six,#seven,#eight, #nine, #decimal {
 	background-color: rgb(13, 63, 104);
@@ -135,7 +134,17 @@ button {
 }
 @media only screen and (min-height: 500px) {
 	#title-area {
-		margin-bottom: 40px;
+		margin-bottom: 30px;
+	}
+	table {
+		width: 290px;
+	}
+	button {
+		height: 70px;
+		width: 70px;
+	}
+	.half button{
+		height: 35px;
 	}
 }
 @media only screen and (min-height: 600px) {
@@ -146,14 +155,14 @@ button {
 		font-size: 100%;
 	}
 	button {
-		height: 70px;
-		width: 70px;
+		height: 80px;
+		width: 80px;
 	}
 	.half button{
-		height: 35px;
+		height: 40px;
 	}
 	table {
-		width: 290px;
+		width: 330px;
 	}
 	#top-window {
 		height: 30px;
@@ -175,22 +184,22 @@ button {
 		font-size: 100%;
 	}
 	button {
-		height: 80px;
-		width: 80px;
+		height: 90px;
+		width: 90px;
 		font-size: 25px;
 	}
 	.half button{
-		height: 40px;
+		height: 45px;
 	}
 	table {
-		width: 330px;
+		width: 370px;
 	}
 	#top-window {
-		height: 35px;
+		height: 40px;
 		font-size: 20px;
 	}
 	#main-window {
-		height: 45px;
+		height: 50px;
 		font-size: 40px;
 	}
 }
@@ -199,28 +208,28 @@ button {
 		font-size: 130%;
 	}
 	#title-area {
-		margin-bottom: 80px;
+		margin-bottom: 60px;
 	}
 	.small-text {
 		font-size: 100%;
 	}
 	button {
-		height: 90px;
-		width: 90px;
+		height: 120px;
+		width: 120px;
 		font-size: 30px;
 	}
 	.half button {
-		height: 45px;
+		height: 60px;
 	}
 	table {
-		width: 370px;
+		width: 490px;
 	}
 	#top-window {
 		height: 35px;
 		font-size: 25px;
 	}
 	#main-window {
-		height: 55px;
-		font-size: 50px;
+		height: 60px;
+		font-size: 60px;
 	}
 }

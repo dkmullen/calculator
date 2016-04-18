@@ -43,11 +43,14 @@ function ViewModel() {
 	};
 	
 	self.enterDigit = function(numStr) {
-		if (activeInput === '0' && numStr !== '.') {
-			activeDisplay(activeInput = numStr);
-		} else {
-			activeInput += numStr;
-			activeDisplay(activeInput);
+		if (activeInput.length < 12) {
+			if (activeInput === '0' && numStr !== '.') {
+				activeDisplay(activeInput = numStr);
+			} 
+			else {
+				activeInput += numStr;
+				activeDisplay(activeInput);
+			}
 		}
 	};
 	//unused (so far) function to add commas
