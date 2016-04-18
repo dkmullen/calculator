@@ -46,8 +46,13 @@ function ViewModel() {
 		if (activeInput === '0' && numStr !== '.') {
 			activeDisplay(activeInput = numStr);
 		} else {
-			activeDisplay(activeInput += numStr);
+			activeInput += numStr;
+			activeDisplay(activeInput);
 		}
+	};
+	//unused (so far) function to add commas
+	self.formatNumber = function(n) {
+		return n.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
 	};
 	
 	self.storeOperation = function(numStr, operandStr) {
@@ -272,3 +277,5 @@ function ViewModel() {
 	});
 }
 ko.applyBindings(new ViewModel());
+
+// https://blog.tompawlak.org/number-currency-formatting-javascript
