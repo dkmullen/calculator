@@ -49,11 +49,12 @@ function ViewModel() {
 			} 
 			else {
 				activeInput += numStr;
-				activeDisplay(activeInput);
+				var n = self.formatNumber(activeInput);
+				activeDisplay(n);
 			}
 		}
 	};
-	//unused (so far) function to add commas
+	// function to add commas
 	self.formatNumber = function(n) {
 		return n.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
 	};
