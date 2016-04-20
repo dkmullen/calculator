@@ -11,6 +11,11 @@ function ViewModel() {
 	var operandStr;
 	var memory = null;
 	
+	self.display = function(n) {
+		n = self.formatNumber(n);
+		activeDisplay(n);
+	};
+	
 	self.memoryPlus = function() {
 		memory += parseFloat(activeInput);
 	};
@@ -22,7 +27,7 @@ function ViewModel() {
 	self.memoryRecall = function() {
 		if (memory !== null) {
 			activeInput = memory.toString();
-			activeDisplay(activeInput);
+			display(activeInput);
 		}
 	};
 	self.memoryClear = function() {
@@ -49,8 +54,7 @@ function ViewModel() {
 			} 
 			else {
 				activeInput += numStr;
-				var n = self.formatNumber(activeInput);
-				activeDisplay(n);
+				display(activeInput);
 			}
 		}
 	};
