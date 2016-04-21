@@ -85,19 +85,19 @@ function ViewModel() {
 		switch (tempOperand[0]) {
         case ' + ':
             activeInput = holdingPen[0] + holdingPen[1];
-			activeDisplay(activeInput);
+			self.display(activeInput.toString());
             break;
 		case ' - ':
             activeInput = holdingPen[0] - holdingPen[1];
-			activeDisplay(activeInput);
+			self.display(activeInput.toString());
             break;
 		case ' * ':
             activeInput = holdingPen[0] * holdingPen[1];
-			activeDisplay(activeInput);
+			self.display(activeInput.toString());
             break;
 		case ' / ':
             activeInput = holdingPen[0] / holdingPen[1];
-			activeDisplay(activeInput);
+			self.display(activeInput.toString());
             break;
 		}
 		if (tempOperand[1] === ' = ') {
