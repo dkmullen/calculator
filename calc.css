@@ -132,6 +132,10 @@ button {
 #equals {
 	background-color: rgb(182, 27, 56);
 }
+#backspace img{
+	height: 15px;
+	width: 20px;
+}
 @media only screen and (min-height: 500px) {
 	#title-area {
 		margin-bottom: 30px;
@@ -191,6 +195,10 @@ button {
 	.half button{
 		height: 45px;
 	}
+	#backspace img{
+		height: 19px;
+		width: 25px;
+	}
 	table {
 		width: 370px;
 	}
@@ -220,6 +228,10 @@ button {
 	}
 	.half button {
 		height: 60px;
+	}
+	#backspace img{
+		height: 23px;
+		width: 30px;
 	}
 	table {
 		width: 490px;
