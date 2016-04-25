@@ -81,6 +81,11 @@ function ViewModel() {
 		}
 	};
 	
+	/**
+	 * A function to accept the operand and do the calculation. Called by
+	 * storeOperation when the 'holdingPen' contains two numbers.
+	 * @function
+	 */
 	self.performCalc = function() {
 		switch (tempOperand[0]) {
         case ' + ':
@@ -100,14 +105,20 @@ function ViewModel() {
 			self.display(activeInput.toString());
             break;
 		}
+		
+		/* When the equals sign is entered, this finishes up the calculation and
+		   clears out everything but the display of the result */
 		if (tempOperand[1] === ' = ') {
 			topStr = '';
 			topDisplay(topStr);
 			holdingPen = [];
 			tempOperand = [];
-			//activeInput = '';
 			
-		}	
+		}
+
+		/* If another operand besides equals is entered, the number is stored,
+		   and 'shift is used to remove the first element in tempOperand (the 
+		   operand just used) and activeInput is cleared (but not the display) */
 		else {
 			holdingPen = [activeInput];
 			tempOperand.shift();
@@ -115,6 +126,7 @@ function ViewModel() {
 		}
 	};
 	
+	/* These number functions simply pass the digit (as a str) to enterDigit */
 	self.zero = function() {
 		self.enterDigit('0');
 	};	
@@ -156,12 +168,18 @@ function ViewModel() {
 		self.enterDigit('9');
 	};
 	
+	/* Adds the decimal but only if none exists previously (indexOf == -1 means
+	   it isn't present in the string) */
 	self.point = function() {
 		if(activeInput.indexOf('.') === -1) {
 			self.enterDigit('.');
 		}
 	};
 	
+	/** 
+	 * A function to clear and reset everything
+	 * @function
+	 */
 	self.C = function() {
 		topDisplay('');
 		activeDisplay(activeInput = '0');
@@ -170,6 +188,8 @@ function ViewModel() {
 		holdingPen = [];
 	};
 	
+	/* A series of functions that pass the current number and entered operand
+	   to storeOperation */
 	self.plus = function() {
 		self.storeOperation(activeInput, ' + ');
 	};
@@ -186,6 +206,8 @@ function ViewModel() {
 		self.storeOperation(activeInput, ' / ');
 	};
 	
+	/* Sends the equals operand IF another operand has been sent first AND
+	   if there is something in activeInput */
 	self.equals = function() {
 		if (tempOperand.length === 1 && activeInput !== '') {
 			self.storeOperation(activeInput, ' = ');
