@@ -222,10 +222,19 @@ function ViewModel() {
 		}
 	};
 	
+	/** 
+	 * A helper function 
+	 * Source: https://blog.tompawlak.org/number-currency-formatting-javascript
+	 * @function
+	 */
 	self.roundToTwo = function(num) {
 		return +(Math.round(num + 'e+2')  + 'e-2');
 	};
 	
+	/** 
+	 * A function to handle keyboard input
+	 * @function
+	 */
 	self.handleInput = function(input, allowedKeys) {
 		switch (input) {
 			case 'backspace':
