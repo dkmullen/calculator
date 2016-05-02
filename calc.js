@@ -223,7 +223,9 @@ function ViewModel() {
 	};
 	
 	/** 
-	 * A helper function 
+	 * A helper function. 'e+2' and 'e-2' are ten squared and ten to the neg 2.
+	 * The function effectively moves the decimal two places, rounds, and 
+	 * moves it back.
 	 * Source: https://blog.tompawlak.org/number-currency-formatting-javascript
 	 * @function
 	 */
