@@ -12,7 +12,10 @@ function ViewModel() {
 	var memory = null;
 	
 	self.display = function(n) {
-		n = self.formatNumber(n);
+		//n = self.formatNumber(n);
+		if (n.length > 15) {
+			document.getElementById('main-window').style.fontSize = '150%';
+		}
 		activeDisplay(n);
 	};
 	
@@ -48,7 +51,7 @@ function ViewModel() {
 	};
 	
 	self.enterDigit = function(numStr) {
-		if (activeInput.length < 12) {
+		if (activeInput.length < 15) {
 			if (activeInput === '0' && numStr !== '.') {
 				activeDisplay(activeInput = numStr);
 			} 
@@ -58,7 +61,7 @@ function ViewModel() {
 			}
 		}
 	};
-	// function to add commas
+	// function to add commas - not used right now 
 	self.formatNumber = function(n) {
 		return n.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
 	};
