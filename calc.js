@@ -13,9 +13,6 @@ function ViewModel() {
 	
 	self.display = function(n) {
 		//n = self.formatNumber(n);
-		if (n.length > 15) {
-			document.getElementById('main-window').style.fontSize = '150%';
-		}
 		activeDisplay(n);
 	};
 	
@@ -66,6 +63,15 @@ function ViewModel() {
 		return n.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
 	};
 	
+	/** 
+	 * A function to store the current operand and to update the top string.
+	 * If numStr is empty and the new operand is something other than =, 
+	 * removes the old operand in top string and replaces it with the new. 
+	 * Otherwise, pushes the numStr to the holding pen and adds the new operand
+	 * to operandStr. Calls performCalc when there is enough data to do so.
+	 * Called by the operand functions.
+	 * @function
+	 */
 	self.storeOperation = function(numStr, operandStr) {
 		if (numStr === '' && operandStr !== ' = '){
 			topStr = topStr.slice(0, -3);
