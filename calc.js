@@ -48,7 +48,7 @@ function ViewModel() {
 	};
 	
 	self.enterDigit = function(numStr) {
-		if (activeInput.length < 20) {
+		if (activeInput.length < 19) {
 			if (activeInput === '0' && numStr !== '.') {
 				activeDisplay(activeInput = numStr);
 			} 

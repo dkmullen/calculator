@@ -16,8 +16,8 @@
 		</div>
 		<div id="display">
 			<div id="top-window" data-bind="text: topDisplay"></div>
-			<div id="spacer"></div>
-			<div id="main-window" data-bind="text: activeDisplay, style: { fontSize: activeDisplay().length > 10 ? 'small' : 'xx-large' }"></div>
+			<!-- 80% and 100% are relative to font-size set for #display -->
+			<div id="main-window" data-bind="text: activeDisplay, style: { fontSize: activeDisplay().length > 15 ? '80%' : '100%' }"></div>
 		</div>
 		<table id="number-pad">
 			<tr><td class="half"><button id="MC" data-bind="click: memoryClear">MC</button><button id="MR" data-bind="click: memoryRecall">MR</button><button id="M-plus" data-bind="click: memoryPlus">M+</button><button id="M-minus" data-bind="click: memoryMinus">M-</button></td></tr>
