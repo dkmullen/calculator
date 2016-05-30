@@ -1,6 +1,6 @@
 /**Calc*/
 var topStr = '';
-var activeInput = '0';
+var activeInput = ('0');
 var topDisplay = ko.observable(topStr);
 var activeDisplay = ko.observable(activeInput);
 
@@ -48,7 +48,7 @@ function ViewModel() {
 	};
 	
 	self.enterDigit = function(numStr) {
-		if (activeInput.length < 15) {
+		if (activeInput.length < 20) {
 			if (activeInput === '0' && numStr !== '.') {
 				activeDisplay(activeInput = numStr);
 			} 
