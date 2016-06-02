@@ -3,8 +3,8 @@ A practice project to develop a basic calculator.
 
 ### TODO:
 
-- Add commas to longer numbers
-- Constrain numbers to fit display 
+- Get display to trigger scientific notation on long numbers
+- Limit length of top display (showing previous entries)
 
 ### Dependencies
 

@@ -11,25 +11,53 @@ function ViewModel() {
 	var operandStr;
 	var memory = null;
 	
+	/** 
+	 * Functions that writes to the main display (activeDisplay). Checks for a
+	 * decimal, calls formatNumber (which adds commas) for the str before the
+	 * decimal and not for what follows.
+	 * @function
+	 * @param n Usually the variable activeInput
+	 */
 	self.display = function(n) {
-		//n = self.formatNumber(n);
-		activeDisplay(n);
+		if (n.indexOf('.') === -1) {
+			activeDisplay(self.formatNumber(n));
+		} else {
+			var v = n.split('.');
+			activeDisplay(self.formatNumber(v[0]) + '.' + v[1]);
+		}
 	};
 	
+	/** 
+	 * @function memoryPlus 
+	 * Adds to memory in response to button press
+	 */
 	self.memoryPlus = function() {
 		memory += parseFloat(activeInput);
 	};
 	
+	/** 
+	 * @function memoryMinus 
+	 * Subtracts from memory in response to button press
+	 */	
 	self.memoryMinus = function() {
 		memory -= parseFloat(activeInput);
 	};
 	
+	/** 
+	 * @function memoryRecall 
+	 * Puts memory content on the display in response to button press
+	 */	
 	self.memoryRecall = function() {
 		if (memory !== null) {
 			activeInput = memory.toString();
 			display(activeInput);
 		}
 	};
+	
+	/** 
+	 * @function memoryClear 
+	 * Empties memory in response to button press
+	 */	
 	self.memoryClear = function() {
 		memory = null;
 	};
@@ -135,7 +163,8 @@ function ViewModel() {
 		}
 	};
 	
-	/* These number functions simply pass the digit (as a str) to enterDigit */
+	/* These number functions simply pass the digit (as a str) to enterDigit.
+	   Tied to thh buttons on the calculator */
 	self.zero = function() {
 		self.enterDigit('0');
 	};	
@@ -167,7 +196,6 @@ function ViewModel() {
 	self.seven = function() {
 		self.enterDigit('7');
 	};
-	
 	
 	self.eight = function() {
 		self.enterDigit('8');
