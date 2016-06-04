@@ -10,3 +10,7 @@ A practice project to develop a basic calculator.
 
 - [knockout.js](https://http://knockoutjs.com/) 
 
+### Credit
+
+The function formatNumber comes from Tom Pawlak at `https://blog.tompawlak.org/number-currency-formatting-javascript`
+

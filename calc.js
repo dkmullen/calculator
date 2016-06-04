@@ -86,7 +86,12 @@ function ViewModel() {
 			}
 		}
 	};
-	// function to add commas - not used right now 
+	
+	/** 
+	 * @function formatNumber 
+	 * Adds commas to larger numbers
+	 * Credit: By Tom Pawlak at https://blog.tompawlak.org/number-currency-formatting-javascript
+	 */	
 	self.formatNumber = function(n) {
 		return n.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
 	};
@@ -332,7 +337,7 @@ function ViewModel() {
 	
 	document.addEventListener('keypress', function(e) {
 		var allowedKeys = {
-			08: 'backspace',
+			8: 'backspace',
 			13: 'ENTER',
 			48: '0',
 			49: '1',
@@ -355,5 +360,3 @@ function ViewModel() {
 	});
 }
 ko.applyBindings(new ViewModel());
-
-// https://blog.tompawlak.org/number-currency-formatting-javascript
