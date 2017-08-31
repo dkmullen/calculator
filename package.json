@@ -1,0 +1,24 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "Basic math calculator ",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dkmullen/calculator.git"
+  },
+  "author": "DKM",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dkmullen/calculator/issues"
+  },
+  "homepage": "https://github.com/dkmullen/calculator#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-watch": "^4.3.11"
+  }
+}
