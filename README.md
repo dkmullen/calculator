@@ -7,7 +7,7 @@ Clone the repository and go. You can also run `npm install` to set up a minimal 
 
 ### Dependencies
 
-- [knockout.js](https://http://knockoutjs.com/)
+- [knockout.js](http://knockoutjs.com/)
 
 ### Credits
 
