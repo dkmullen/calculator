@@ -10,54 +10,60 @@
 </head>
 
 <body>
-	<div id="wrapper">
+	<div id="page-wrapper">
 		<div id="title-area">
 			<h1>Calculator</h1>
 			<p id="home" class="small-text"><a href="http://dkmullen.com/">dkmullen.com</a></p>
 		</div>
-		<div id="display">
-			<div id="top-window" data-bind="text: topDisplay"></div>
-			<!-- 80% and 100% are relative to font-size set for #display -->
-			<div id="main-window" data-bind="text: activeDisplay, style: { fontSize: activeDisplay().length > 15 ? '80%' : '100%' }"></div>
+		<div id="calc-wrapper">
+			<div id="calculator">
+				<div id="display">
+					<div id="top-window" data-bind="text: topDisplay"></div>
+					<!-- 80% and 100% are relative to font-size set for #display -->
+					<div id="main-window" data-bind="text: activeDisplay, style: { fontSize: activeDisplay().length > 15 ? '80%' : '100%' }"></div>
+				</div>
+				<table id="number-pad">
+					<tr class="half">
+						<td><button id="MC" data-bind="click: memoryClear">MC</button></td>
+						<td><button id="MR" data-bind="click: memoryRecall">MR</button></td>
+						<td><button id="M-plus" data-bind="click: memoryPlus">M+</button></td>
+						<td><button id="M-minus" data-bind="click: memoryMinus">M-</button></td>
+					</tr>
+					<tr class="half">
+						<td><button id="CE" data-bind="click: clearEntry">CE</button></td>
+						<td><button id="C" data-bind="click: C">C</button></td>
+						<td><button id="backspace" data-bind="click: backSpace"><img src="backspace.png"></button></td>
+						<td><button id="percent" data-bind="click: percent">%</button></td>
+					</tr>
+					<tr>
+						<td><button id="seven" data-bind="click: seven">7</button></td>
+						<td><button id="eight" data-bind="click: eight">8</button></td>
+						<td><button id="nine" data-bind="click: nine">9</button></td>
+						<td><button id="divided-by" data-bind="click: divide">/</button></td>
+					</tr>
+					<tr>
+						<td><button id="four" data-bind="click: four">4</button></td>
+						<td><button id="five" data-bind="click: five">5</button></td>
+						<td><button id="six" data-bind="click: six">6</button></td>
+						<td><button id="times" data-bind="click: times">X</button></td>
+					</tr>
+					<tr>
+						<td><button id="one" data-bind="click: one">1</button></td>
+						<td><button id="two" data-bind="click: two">2</button></td>
+						<td><button id="three" data-bind="click: three">3</button></td>
+						<td><button id="minus" data-bind="click: minus">-</button></td>
+					</tr>
+					<tr>
+						<td><button id="zero" data-bind="click: zero">0</button></td>
+						<td><button id="point" data-bind="click: point">.</button></td>
+						<td><button id="equals" data-bind="click: equals">=</button></td>
+						<td><button id="plus" data-bind="click: plus">+</button></td>
+					</tr>
+				</table>
+			</div>
 		</div>
-		<table id="number-pad">
-			<tr class="half">
-				<td><button id="MC" data-bind="click: memoryClear">MC</button></td>
-				<td><button id="MR" data-bind="click: memoryRecall">MR</button></td>
-				<td><button id="M-plus" data-bind="click: memoryPlus">M+</button></td>
-				<td><button id="M-minus" data-bind="click: memoryMinus">M-</button></td>
-			</tr>
-			<tr class="half">
-				<td><button id="CE" data-bind="click: clearEntry">CE</button></td>
-				<td><button id="C" data-bind="click: C">C</button></td>
-				<td><button id="backspace" data-bind="click: backSpace"><img src="backspace.png"></button></td>
-				<td><button id="percent" data-bind="click: percent">%</button></td>
-			</tr>
-			<tr>
-				<td><button id="seven" data-bind="click: seven">7</button></td>
-				<td><button id="eight" data-bind="click: eight">8</button></td>
-				<td><button id="nine" data-bind="click: nine">9</button></td>
-				<td><button id="divided-by" data-bind="click: divide">/</button></td>
-			</tr>
-			<tr>
-				<td><button id="four" data-bind="click: four">4</button></td>
-				<td><button id="five" data-bind="click: five">5</button></td>
-				<td><button id="six" data-bind="click: six">6</button></td>
-				<td><button id="times" data-bind="click: times">X</button></td>
-			</tr>
-			<tr>
-				<td><button id="one" data-bind="click: one">1</button></td>
-				<td><button id="two" data-bind="click: two">2</button></td>
-				<td><button id="three" data-bind="click: three">3</button></td>
-				<td><button id="minus" data-bind="click: minus">-</button></td>
-			</tr>
-			<tr>
-				<td><button id="zero" data-bind="click: zero">0</button></td>
-				<td><button id="point" data-bind="click: point">.</button></td>
-				<td><button id="equals" data-bind="click: equals">=</button></td>
-				<td><button id="plus" data-bind="click: plus">+</button></td>
-			</tr>
-		</table>
+
+
 	</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>

@@ -66,9 +66,16 @@ body {
 	height: 100%;
 	max-height: 1024px;
 }
-#wrapper {
-	background-color: rgb(229, 230, 241);
+#page-wrapper {
 	height: 100%;
+	background-color: rgb(229, 230, 241);
+}
+#calc-wrapper {
+	background-color: rgb(229, 230, 241);
+}
+#calculator {
+	position: relative;
+	top: 20px;
 }
 #title-area {
 	background-color: rgb(13, 63, 104);
@@ -142,9 +149,6 @@ button {
 	width: 20px;
 }
 @media only screen and (min-height: 500px) {
-	#title-area {
-		margin-bottom: 30px;
-	}
 	#display {
 		width: 290px;
 		height: 70px;
@@ -164,9 +168,6 @@ button {
 	}
 }
 @media only screen and (min-height: 600px) {
-	#title-area {
-		margin-bottom: 40px;
-	}
 	.small-text {
 		font-size: 100%;
 	}
@@ -190,9 +191,6 @@ button {
 	}
 }
 @media only screen and (min-height: 700px) {
-	#title-area {
-		margin-bottom: 50px;
-	}
 	h1 {
 		font-size: 250%;
 	}
@@ -224,9 +222,6 @@ button {
 	}
 }
 @media only screen and (min-height: 850px) {
-	#title-area {
-		margin-bottom: 60px;
-	}
 	h1 {
 	font-size: 270%;
 	}

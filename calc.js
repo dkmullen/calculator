@@ -6,6 +6,13 @@ var activeDisplay = ko.observable(activeInput);
 
 function ViewModel() {
 
+
+	var click = new Audio();
+	click.src = 'click.wav';
+	function playClick() {
+		click.play();
+	}
+
 	var tempOperand = [];
 	var holdingPen = [];
 	var operandStr;
@@ -32,6 +39,7 @@ function ViewModel() {
 	 * Adds to memory in response to button press
 	 */
 	self.memoryPlus = function() {
+		playClick();
 		memory += parseFloat(activeInput);
 	};
 
@@ -40,6 +48,7 @@ function ViewModel() {
 	 * Subtracts from memory in response to button press
 	 */
 	self.memoryMinus = function() {
+		playClick();
 		memory -= parseFloat(activeInput);
 	};
 
@@ -49,6 +58,7 @@ function ViewModel() {
 	 */
 	self.memoryRecall = function() {
 		if (memory !== null) {
+			playClick();
 			activeInput = memory.toString();
 			display(activeInput);
 		}
@@ -59,24 +69,28 @@ function ViewModel() {
 	 * Empties memory in response to button press
 	 */
 	self.memoryClear = function() {
+		playClick();
 		memory = null;
 	};
 
 	self.backSpace = function() {
 		activeInput = activeInput.slice(0, -1);
 		if (activeInput === '') {
+			playClick();
 			activeInput = '0';
 		}
 		activeDisplay(activeInput);
 	};
 
 	self.clearEntry = function() {
+		playClick();
 		activeInput = '0';
 		activeDisplay(activeInput);
 	};
 
 	self.enterDigit = function(numStr) {
 		if (activeInput.length < 19) {
+			playClick();
 			if (activeInput === '0' && numStr !== '.') {
 				activeDisplay(activeInput = numStr);
 			}
@@ -214,6 +228,7 @@ function ViewModel() {
 	   it isn't present in the string) */
 	self.point = function() {
 		if(activeInput.indexOf('.') === -1) {
+			playClick();
 			self.enterDigit('.');
 		}
 	};
@@ -223,6 +238,7 @@ function ViewModel() {
 	 * @function
 	 */
 	self.C = function() {
+		playClick();
 		topDisplay('');
 		activeDisplay(activeInput = '0');
 		topStr = '';
@@ -233,18 +249,22 @@ function ViewModel() {
 	/* A series of functions that pass the current number and entered operand
 	   to storeOperation */
 	self.plus = function() {
+		playClick();
 		self.storeOperation(activeInput, ' + ');
 	};
 
 	self.minus = function() {
+		playClick();
 		self.storeOperation(activeInput, ' - ');
 	};
 
 	self.times = function() {
+		playClick();
 		self.storeOperation(activeInput, ' * ');
 	};
 
 	self.divide = function() {
+		playClick();
 		self.storeOperation(activeInput, ' / ');
 	};
 
@@ -252,6 +272,7 @@ function ViewModel() {
 	   if there is something in activeInput */
 	self.equals = function() {
 		if (tempOperand.length === 1 && activeInput !== '') {
+			playClick();
 			self.storeOperation(activeInput, ' = ');
 		}
 	};
@@ -260,6 +281,7 @@ function ViewModel() {
 		if (holdingPen.length > 0 && activeInput !== '') {
 			var n = self.roundToTwo((parseFloat(activeInput)/100) * holdingPen[0]);
 			activeInput = n.toString();
+			playClick();
 			activeDisplay(activeInput);
 		}
 	};
